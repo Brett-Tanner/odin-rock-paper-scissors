@@ -1,4 +1,5 @@
-
+let playerChoice;
+let computerChoice;
 
 
 function getPlayerChoice() {
@@ -6,9 +7,7 @@ function getPlayerChoice() {
     
     playerChoice = prompt("Choose your fighter! Rock, Paper or Scissors?").toUpperCase();
 
-    if (playerChoice == "ROCK" || playerChoice == "PAPER" || playerChoice == "SCISSORS") {
-        console.log(playerChoice);
-    }
+    if (playerChoice == "ROCK" || playerChoice == "PAPER" || playerChoice == "SCISSORS");
     else {
         alert("Invalid input");
         getPlayerChoice();
@@ -22,10 +21,20 @@ function getComputerChoice() {
     let choices = ["ROCK", "PAPER", "SCISSORS"];
         
     computerChoice = choices[Math.floor(Math.random() * 3)];
-
-    console.log(computerChoice)
 }
 
+function playRound() {
+    /* get choices*/
+
+    getPlayerChoice();
+    getComputerChoice();
+    
+
+    console.log(playerChoice)
+    console.log(computerChoice)
+
+    /* compare choices and return result */
+}
 
 
 /*  */
