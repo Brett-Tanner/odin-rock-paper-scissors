@@ -7,8 +7,7 @@ function getPlayerChoice() {
     
     playerChoice = prompt("Choose your fighter! Rock, Paper or Scissors?").toUpperCase();
 
-    if (playerChoice == "ROCK" || playerChoice == "PAPER" || playerChoice == "SCISSORS");
-    else {
+    if (playerChoice !== "ROCK" && playerChoice !== "PAPER" && playerChoice !== "SCISSORS") {
         alert("Invalid input");
         getPlayerChoice();
     }
