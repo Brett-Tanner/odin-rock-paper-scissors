@@ -39,11 +39,11 @@ function playRound() {
         playRound();
     }
         else if (playerChoice === "ROCK" && computerChoice === "SCISSORS" || playerChoice === "PAPER" && computerChoice === "ROCK" || playerChoice === "SCISSORS" && computerChoice === "PAPER") {
-            alert(`${playerChoice.toLowerCase()} beats ${computerChoice.toLowerCase()}! You win this round.`);
+            alert(`${playerChoice.charAt(0)}${playerChoice.slice(1).toLowerCase()} beats ${computerChoice.toLowerCase()}! You win this round.`);
             return "PlayerWins";
         }
         else if (playerChoice === "SCISSORS" && computerChoice === "ROCK" || playerChoice === "ROCK" && computerChoice === "PAPER" || playerChoice === "PAPER" && computerChoice === "SCISSORS") {
-            alert(`${computerChoice.toLowerCase()} beats ${playerChoice.toLowerCase()}! Better luck next time.`);
+            alert(`${computerChoice.charAt(0)}${computerChoice.slice(1).toLowerCase()} beats ${playerChoice.toLowerCase()}! Better luck next time.`);
             return "ComputerWins";
         }
         else {
