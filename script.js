@@ -32,11 +32,11 @@ function playRound() {
     console.log(playerChoice)
     console.log(computerChoice)
 
-    /* compare choices and return result (currently not returning the result after one or more ties) */
+    /* compare choices and return result (remember it's important to return the result of recursive functions) */
 
     if (playerChoice === computerChoice) {
         alert(`Both players chose ${playerChoice.toLowerCase()}! Try again.`);
-        playRound();
+        return playRound();
     }
         else if (playerChoice === "ROCK" && computerChoice === "SCISSORS" || playerChoice === "PAPER" && computerChoice === "ROCK" || playerChoice === "SCISSORS" && computerChoice === "PAPER") {
             alert(`${playerChoice.charAt(0)}${playerChoice.slice(1).toLowerCase()} beats ${computerChoice.toLowerCase()}! You win this round.`);
