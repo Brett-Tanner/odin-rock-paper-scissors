@@ -32,7 +32,24 @@ function playRound() {
     console.log(playerChoice)
     console.log(computerChoice)
 
-    /* compare choices and return result */
+    /* compare choices and return result (currently not returning the result after one or more ties) */
+
+    if (playerChoice === computerChoice) {
+        alert(`Both players chose ${playerChoice.toLowerCase()}! Try again.`);
+        playRound();
+    }
+        else if (playerChoice === "ROCK" && computerChoice === "SCISSORS" || playerChoice === "PAPER" && computerChoice === "ROCK" || playerChoice === "SCISSORS" && computerChoice === "PAPER") {
+            alert(`${playerChoice.toLowerCase()} beats ${computerChoice.toLowerCase()}! You win this round.`);
+            return "PlayerWins";
+        }
+        else if (playerChoice === "SCISSORS" && computerChoice === "ROCK" || playerChoice === "ROCK" && computerChoice === "PAPER" || playerChoice === "PAPER" && computerChoice === "SCISSORS") {
+            alert(`${computerChoice.toLowerCase()} beats ${playerChoice.toLowerCase()}! Better luck next time.`);
+            return "ComputerWins";
+        }
+        else {
+            return "Something broke in the playRound function."
+        }
+
 }
 
 

@@ -16,9 +16,7 @@ Select CPU choice
 
 Compare choices
 
-Passes the get functions as callback functions
-
-    function playRound = (callback getCPUchoice,    callback getPlayerChoice) 
+    function playRound = () 
 
     {   
         let playerChoice;
