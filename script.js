@@ -47,6 +47,7 @@ function playRound() {
 }
 
 
+/* 
 function Bo5() {
     // Score trackers (here so they reset to 0 after each game)
     
@@ -94,3 +95,4 @@ function Bo5() {
             alert(`Computer: ${computerScore} - Human: ${playerScore}. The robot uprising approaches....`)
         }
 }
+*/
