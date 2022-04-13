@@ -1,3 +1,6 @@
+const playButtons = document.querySelectorAll(".play");
+playButtons.addEventListener('click', playRound(e));
+
 function getPlayerChoice() {
     // Prompts for player's choice and checks for a valid input
     
@@ -19,10 +22,10 @@ function getComputerChoice() {
 }
 
 
-function playRound() {
+function playRound(e) {
     // Get choices
 
-    getPlayerChoice();
+    playerChoice = e.which;
     getComputerChoice();
     
 
