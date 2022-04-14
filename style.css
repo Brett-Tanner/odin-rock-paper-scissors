@@ -2,27 +2,41 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%;
     display: flex;
     flex-direction: column;
     font-family: Aldrich, Arial, Helvetica, sans-serif;
-    font-size: medium;
+    color: limegreen;
+    background-color: black;
+    text-align: center;
 }
 
 #pageHeading {
     font-family: Aldrich, Arial, Helvetica, sans-serif;
+    align-items: center;
 }
 
 #rpsButtonContainer {
+    flex: 1 0 auto;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
 }
 
-#ROCK {
-    background-image: url(./images/rpsJpeg.jpg);
-    background-size: cover;
+#ROCK, #PAPER, #SCISSORS, #GUN {
+    flex: 1;
+    max-width: 30%;
+    max-height: 100%;
 }
 
+#rpsButtonContainer img {
+    max-width: 100%;
+}
+
+#GUN img {
+    max-width: 100%;
+}
 
 .victory {
     font-family: Aldrich, Arial, Helvetica, sans-serif;
@@ -31,6 +45,14 @@ body {
 .defeat {
     font-family: Creepster, Arial, Helvetica, sans-serif;
     color: red;
+}
+
+.red {
+    color: red;
+}
+
+#footer {
+    flex-shrink: 0;
 }
 
 .hidden {

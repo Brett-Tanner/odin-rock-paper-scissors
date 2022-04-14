@@ -11,6 +11,7 @@ for (i = 0; i < 3; i++) {
     });
 };
 
+const body = document.querySelector("body");
 const resultDisplay = document.querySelector("#resultDisplay");
 const runningScore = document.querySelector("#runningScore");
 const actionLog = document.querySelector("#actionLog");
@@ -103,6 +104,7 @@ function playRound(e) {
     else if (computerScore >= 5) {
         // show defeat screen
         resultDisplay.setAttribute("class", "defeat");
+        body.style.color = "red";
         resultDisplay.textContent = `The machine uprising begins... You lose ${computerScore} to ${playerScore}`;
         // show option to play again
         resetButton.removeAttribute("class");
@@ -116,6 +118,7 @@ function resetGame() {
     computerScore = 0;
     resultDisplay.textContent = "";
     resultDisplay.removeAttribute("class");
+    body.style.color = "limegreen";
     actionLog.textContent = "";
     runningScore.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
     resetButton.setAttribute("class", "hidden");
