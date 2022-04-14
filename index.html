@@ -2,16 +2,26 @@
 <head>
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Creepster">
     <script src="script.js" defer></script>
 </head>
 <html>
-    <button id="ROCK" class="play game"></button>
-    <button id="PAPER" class="play game"></button>
-    <button id="SCISSORS" class="play game"></button>
-    <div id="resultDisplay" class="game"></div>
-    <div id="runningScore" class="game"></div>
-    <div id="actionLog" class="game"></div>    
+    <div id="pageHeading">
+        <h1>Let's play!<br>Rock, Paper, Scissors!</h1>
+    </div>
+    <div id="rpsButtonContainer">
+        <button id="ROCK" class="play">Rock</button>
+        <button id="SCISSORS" class="play">Scissors</button>
+        <button id="PAPER" class="play">Paper</button>
+    </div>
+    <div id="resultDisplay"></div>
+    <div id="runningScore"></div>
+    <div id="actionLog"></div>    
     <div id="gameReset">
         <button id="resetButton" class="hidden">Play again?</button>
+    </div>
+    <div id="footer">
+        <p>Icons found at: <a href="https://www.freepik.com/vectors/clip-art">Clip art vector created by DrawingMyDiary - www.freepik.com</a></p>
     </div>
 </html>

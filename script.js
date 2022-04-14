@@ -115,6 +115,7 @@ function resetGame() {
     playerScore = 0;
     computerScore = 0;
     resultDisplay.textContent = "";
+    resultDisplay.removeAttribute("class");
     actionLog.textContent = "";
     runningScore.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
     resetButton.setAttribute("class", "hidden");
