@@ -105,9 +105,12 @@ function playRound(e) {
         // show defeat screen
         resultDisplay.setAttribute("class", "defeat");
         body.style.color = "red";
+        playButtons[0].setAttribute("class", "red play");
+        playButtons[1].setAttribute("class", "red play");
+        playButtons[2].setAttribute("class", "red play");
         resultDisplay.textContent = `The machine uprising begins... You lose ${computerScore} to ${playerScore}`;
         // show option to play again
-        resetButton.removeAttribute("class");
+        resetButton.setAttribute("class", "red");
         return;
     }
 
@@ -119,6 +122,9 @@ function resetGame() {
     resultDisplay.textContent = "";
     resultDisplay.removeAttribute("class");
     body.style.color = "limegreen";
+    playButtons[0].setAttribute("class", "play");
+    playButtons[1].setAttribute("class", "play");
+    playButtons[2].setAttribute("class", "play");
     actionLog.textContent = "";
     runningScore.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
     resetButton.setAttribute("class", "hidden");

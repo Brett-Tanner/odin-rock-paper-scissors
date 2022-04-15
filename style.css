@@ -12,30 +12,69 @@ html, body {
     text-align: center;
 }
 
-#pageHeading {
+button {
+    border-color: limegreen;
+    background-color: black;
+    color: limegreen;
     font-family: Aldrich, Arial, Helvetica, sans-serif;
+}
+
+#pageHeading {
     align-items: center;
 }
 
-#rpsButtonContainer {
-    flex: 1 0 auto;
+#rpsHeadingContainer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-around;
 }
 
-#ROCK, #PAPER, #SCISSORS, #GUN {
-    flex: 1;
+#rpsHeadingContainer p {
+    flex: 1 0 auto;
     max-width: 30%;
-    max-height: 100%;
+    min-width: 30%;
+    font-size: 25px;
 }
 
-#rpsButtonContainer img {
-    max-width: 100%;
+#rpsButtonContainer { 
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
-#GUN img {
-    max-width: 100%;
+.play {
+    flex: 1 0 auto;
+    max-width: 20%;
+    padding-top: 20%;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#ROCK {
+    background-image: url(./images/rock.jpg);
+}
+
+#SCISSORS {
+    background-image: url(./images/scissors.jpg);
+}
+
+#PAPER {
+    background-image: url(./images/paper.jpg);
+}
+
+#resultDisplay {
+    flex: 0 0 auto;
+}
+
+#runningScore {
+    flex: 0 0 auto;
+}
+
+#actionLog {
+    flex: 1;
+    white-space: pre-line;
 }
 
 .victory {
@@ -49,6 +88,7 @@ html, body {
 
 .red {
     color: red;
+    border-color: red;
 }
 
 #footer {
@@ -56,5 +96,5 @@ html, body {
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
 }
