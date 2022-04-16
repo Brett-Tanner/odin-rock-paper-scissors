@@ -50,6 +50,13 @@ button {
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
+    filter: invert(1);
+    background-color: white;
+    border-color: #cd32cd;
+}
+
+.play:hover, .play:active {
+    background-color: #cd32cd;
 }
 
 #ROCK {
@@ -88,7 +95,7 @@ button {
 
 .red {
     color: red;
-    border-color: red;
+    border-color: #00ffff;
 }
 
 #footer {
