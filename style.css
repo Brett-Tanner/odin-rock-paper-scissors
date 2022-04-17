@@ -19,6 +19,15 @@ button {
     font-family: Aldrich, Arial, Helvetica, sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
+.red {
+    color: red;
+    border-color: #00ffff;
+}
+
 #pageHeading {
     align-items: center;
 }
@@ -127,15 +136,11 @@ button {
     margin: 0 20%;
 }
 
-.red {
-    color: red;
-    border-color: #00ffff;
+#emptySpace {
+    flex: 1;
 }
 
 #footer {
     flex-shrink: 0;
 }
 
-.hidden {
-    display: none;
-}

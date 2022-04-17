@@ -36,6 +36,26 @@ resetButton.addEventListener("click", function(e) {
     resetGame();
 });
 
+// wake up and choose violence
+const violence = document.querySelector("#GUN");
+
+function onKonamiCode(cb) {
+    var input = '';
+    var key = 'violence';
+    document.addEventListener('keydown', function (e) {
+      input += ("" + e.key);
+      if (input === key) {
+        cb();
+        violence.removeAttribute("class");
+        return;
+      }
+      if (!key.indexOf(input)) return;
+      input = ("" + e.key);
+    });
+  }
+  
+  onKonamiCode(function () {alert("Cheats active")});
+
 
 function getComputerChoice() {
     // Randomly selects the computer's choice from an array
@@ -144,6 +164,7 @@ function resetGame() {
     collapsible.style.borderColor = "limegreen";
     actionLog.textContent = "";
     runningScore.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
+    violence.setAttribute("class", "hidden");
     // re-hide reset button
     resetButton.setAttribute("class", "hidden");
 }
