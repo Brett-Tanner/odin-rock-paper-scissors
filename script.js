@@ -5,7 +5,7 @@ let computerScore = 0;
 // select choice buttons
 const playButtons = document.querySelectorAll(".play");
 // return the id of the clicked button for use in playRound()
-for (i = 0; i < 3; i++) {
+for (i = 0; i < playButtons.length; i++) {
     playButtons[i].addEventListener("click", function(e) {
         playRound(e);
     });
@@ -37,7 +37,7 @@ resetButton.addEventListener("click", function(e) {
 });
 
 // wake up and choose violence
-const violence = document.querySelector("#GUN");
+const violence = document.querySelector("#violenceContainer");
 
 function onKonamiCode(cb) {
     var input = '';
@@ -65,6 +65,21 @@ function getComputerChoice() {
     computerChoice = choices[Math.floor(Math.random() * 3)];
 }
 
+// format page to show defeat
+function defeat() {
+    resultDisplay.setAttribute("class", "defeat");
+    resultDisplay.textContent = `The machine uprising begins... You lose ${computerScore} to ${playerScore}`;
+    body.style.color = "red";
+    runningScore.style.borderColor = "red";
+    for (i = 0; i < playButtons.length; i++) {
+        playButtons[i].setAttribute("class", "play red");
+    };
+    collapsible.style.color = "red";
+    collapsible.style.borderColor = "red";
+    // show option to play again
+    resetButton.removeAttribute("class");
+    return;
+}
 
 function playRound(e) {
     // Get choices
@@ -78,7 +93,13 @@ function playRound(e) {
         return;
     }
 
-  
+    // check for violence
+    if (playerChoice === "GUN") {
+        defeat();
+        runningScore.textContent = "Player: 9999999 - Computer: -0"
+        resultDisplay.textContent = "Violence; if it doesn't work you're not using enough."
+    }
+
     // check for tie
     if (playerChoice === computerChoice) {
         const result = (`Both players chose ${playerChoice.toLowerCase()}! Try again.`);
@@ -133,19 +154,7 @@ function playRound(e) {
         return;
     }
     else if (computerScore >= 5) {
-        // show defeat screen
-        resultDisplay.setAttribute("class", "defeat");
-        resultDisplay.textContent = `The machine uprising begins... You lose ${computerScore} to ${playerScore}`;
-        body.style.color = "red";
-        runningScore.style.borderColor = "red";
-        for (i = 0; i < 3; i++) {
-        playButtons[i].setAttribute("class", "red play");
-        };
-        collapsible.style.color = "red";
-        collapsible.style.borderColor = "red";
-        // show option to play again
-        resetButton.removeAttribute("class");
-        return;
+        defeat();
     }
 
 }
@@ -157,7 +166,7 @@ function resetGame() {
     resultDisplay.removeAttribute("class");
     runningScore.style.borderColor = "limegreen";
     body.style.color = "limegreen";
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < playButtons.length; i++) {
     playButtons[i].setAttribute("class", "play");
     };
     collapsible.style.color = "limegreen";

@@ -23,11 +23,6 @@ button {
     display: none;
 }
 
-.red {
-    color: red;
-    border-color: #00ffff;
-}
-
 #pageHeading {
     align-items: center;
 }
@@ -55,6 +50,7 @@ button {
 .play {
     flex: 1 0 auto;
     max-width: 20%;
+    min-width: 20%;
     padding-top: 20%;
     background-size: 90%;
     background-repeat: no-repeat;
@@ -83,6 +79,18 @@ button {
 #resetButton {
     margin-top: 25px;
     font-size: 20px;
+    padding: 5px;
+}
+
+#violenceContainer p {
+    font-family: Creepster, Arial, Helvetica, sans-serif;
+    color: red;
+    font-size: 50px;
+    margin: 25px 0;
+}
+
+#GUN {
+    background-image: url(./images/gun.jpg);
 }
 
 #resultDisplay {
@@ -138,9 +146,16 @@ button {
 
 #emptySpace {
     flex: 1;
+    font-size: 8px;
+    color: red;
+    opacity: 30%;
 }
 
 #footer {
     flex-shrink: 0;
 }
 
+.red {
+    color: red;
+    border-color: #00ffff;
+}
